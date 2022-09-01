@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 25.0.1703.2
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CongestionTaxCalculator", "CongestionTaxCalculator\CongestionTaxCalculator.csproj", "{FD4ECE4B-2C14-4542-BC4B-A54C61DE1D87}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CongestionTax", "CongestionTaxCalculator\CongestionTax.csproj", "{FD4ECE4B-2C14-4542-BC4B-A54C61DE1D87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

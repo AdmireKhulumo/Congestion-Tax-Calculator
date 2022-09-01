@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
+using System.Web;
+using CongestionTax.Database;
+using Google.Cloud.Firestore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,6 +31,7 @@ namespace CongestionTaxCalculator
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            // some swagger Ui settings
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1", new OpenApiInfo
@@ -36,6 +41,17 @@ namespace CongestionTaxCalculator
                     Description = "An API for calculating congestion tex for a vehicle.",
                 });
             });
+
+            // for firestore database 
+            var firebaseJson = JsonSerializer.Serialize(new FirebaseSettings());
+            services.AddSingleton(_ => new DBProvider(
+                new FirestoreDbBuilder
+                {
+                    ProjectId = "congestion-tax-calculator",
+                    JsonCredentials = firebaseJson
+                }.Build()
+            ));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
