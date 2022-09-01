@@ -1,7 +1,7 @@
 # Congestion Tax Calculator Solution
 
 ## Overview
-An ASP.NET Core Web API to solve the [Volvo car congestion tax calculator challenge](https://github.com/volvo-cars/congestion-tax-calculator/blob/main/ASSIGNMENT.md).
+An ASP.NET Core Web API to solve the [Volvo congestion tax calculator challenge](https://github.com/volvo-cars/congestion-tax-calculator/blob/main/ASSIGNMENT.md).
 
 ## Details
 
