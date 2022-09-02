@@ -50,7 +50,7 @@ namespace CongestionTax.Models
     }
 
     /// <summary>
-    /// For comparing two time rules -- A > B if A's start time is before B's start time
+    /// For comparing two time rules -- A < B if A's start time is before B's start time
     /// </summary>
     public class TimeRuleComparer : IComparer<TimeRule>
     {
@@ -67,13 +67,8 @@ namespace CongestionTax.Models
             int startA = Int32.Parse($"{x.StartHour}{x.StartMinute}");
             int startB = Int32.Parse($"{y.StartHour}{y.StartMinute}");
 
-
-            if (startA > startB)
-                return 1;
-            if (startB < startA)
-                return -1;
-            else
-                return 0;
+            // compare and return result
+            return startA.CompareTo(startB);
 
         }
     }
